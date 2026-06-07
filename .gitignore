@@ -1,0 +1,41 @@
+# Logs & system files
+*.log
+.DS_Store
+Thumbs.db
+
+# Environment & secrets — ❌ CRITICAL: NEVER UPLOAD THESE
+.env
+.env.backup
+.env.production
+.env.*
+
+# Laravel & PHP
+.phpactor.json
+.phpunit.result.cache
+/.phpunit.cache
+/vendor
+/bootstrap/cache/*
+/storage/*.key
+/storage/pail
+/storage/framework/*
+/storage/logs/*
+/storage/sessions/*
+/storage/views/*
+/public/hot
+/public/storage
+
+# Node / Assets
+/node_modules
+/public/build
+
+# IDE / Editor files — your personal settings
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+/auth.json
+
+# Local dev tools
+Homestead.json
+Homestead.yaml
