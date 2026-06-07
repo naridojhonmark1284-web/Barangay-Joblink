@@ -13,4 +13,4 @@ RUN composer install --no-dev --optimize-autoloader
 RUN chmod -R 777 storage bootstrap/cache database
 
 EXPOSE 80
-CMD ["sh", "-c", "touch /var/www/html/database/database.sqlite && chmod 666 /var/www/html/database/database.sqlite && php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=80"]
+CMD ["sh", "-c", "php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=80"]
