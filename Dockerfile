@@ -12,10 +12,5 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 RUN chmod -R 777 storage bootstrap/cache database
 
-# Entrypoint script
-COPY docker/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-
 EXPOSE 80
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=80"]
+CMD ["sh", "-c", "touch /var/www/html/database/database.sqlite && chmod 666 /var/www/html/database/database.sqlite && php artisan config:clear && php artisan cache:clear && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=80"]
